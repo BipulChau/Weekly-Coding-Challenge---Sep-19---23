@@ -30,7 +30,10 @@
 def sumDigitCharacters(S):
     arr = []
     for i in range(len(S)):
-        arr.append(S[i])
-    print(arr)
+        try:
+            arr.append(int(S[i]))
+        except ValueError as e:
+            continue
+    print(sum(arr))
 
 sumDigitCharacters("ab1231da")
